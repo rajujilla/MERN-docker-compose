@@ -7,7 +7,7 @@ const app = express();
 
 // Allow requests from your React app's origin
 const corsOptions = {
-  origin: "http://3.110.224.8:5050", // Adjust if your React app is hosted elsewhere
+  origin: "http://3.110.224.8:5050/record", // Adjust if your React app is hosted elsewhere
 };
 
 app.use(cors(corsOptions));
