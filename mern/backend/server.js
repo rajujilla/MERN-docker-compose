@@ -5,11 +5,16 @@ import records from "./routes/record.js";
 const PORT = process.env.PORT || 5050;
 const app = express();
 
-app.use(cors());
+// Allow requests from your React app's origin
+const corsOptions = {
+  origin: "http://3.110.224.8:5050", // Adjust if your React app is hosted elsewhere
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/record", records);
 
-// start the Express server
+// Start the Express server
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
